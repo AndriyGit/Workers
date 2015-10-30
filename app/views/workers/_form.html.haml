@@ -1,0 +1,37 @@
+= form_for @worker do |f|
+  - if @worker.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@worker.errors.count, "error")} prohibited this worker from being saved:"
+      %ul
+        - @worker.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :first_name
+    = f.text_field :first_name
+  .field
+    = f.label :last_name
+    = f.text_field :last_name
+  .field
+    = f.label :middle_name
+    = f.text_field :middle_name
+  .field
+    = f.label :kind
+    = f.check_box :kind
+  .field
+    = f.label :worked_with
+    = f.text_area :worked_with
+  .field
+    = f.label :photo_url
+    = f.text_area :photo_url
+  .field
+    = f.label :rating
+    = f.text_field :rating
+  .field
+    = f.label :reason_for_adding
+    = f.text_area :reason_for_adding
+  .field
+    = f.label :additional_info
+    = f.text_area :additional_info
+  .actions
+    = f.submit 'Save'

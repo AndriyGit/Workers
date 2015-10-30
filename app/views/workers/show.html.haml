@@ -1,0 +1,33 @@
+%p#notice= notice
+
+%p
+  %b First name:
+  = @worker.first_name
+%p
+  %b Last name:
+  = @worker.last_name
+%p
+  %b Middle name:
+  = @worker.middle_name
+%p
+  %b Kind:
+  = @worker.kind
+%p
+  %b Worked with:
+  = @worker.worked_with
+%p
+  %b Photo url:
+  = @worker.photo_url
+%p
+  %b Rating:
+  = @worker.rating
+%p
+  %b Reason for adding:
+  = @worker.reason_for_adding
+%p
+  %b Additional info:
+  = @worker.additional_info
+
+= link_to 'Edit', edit_worker_path(@worker)
+\|
+= link_to 'Back', workers_path

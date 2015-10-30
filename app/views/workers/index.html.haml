@@ -1,0 +1,37 @@
+%h1 Listing workers
+
+%table
+  %thead
+    %tr
+      %th First name
+      %th Last name
+      %th Middle name
+      %th Kind
+      %th Worked with
+      %th Photo url
+      %th Rating
+      %th Reason for adding
+      %th Additional info
+      %th
+      %th
+      %th
+
+  %tbody
+    - @workers.each do |worker|
+      %tr
+        %td= worker.first_name
+        %td= worker.last_name
+        %td= worker.middle_name
+        %td= worker.kind
+        %td= worker.worked_with
+        %td= worker.photo_url
+        %td= worker.rating
+        %td= worker.reason_for_adding
+        %td= worker.additional_info
+        %td= link_to 'Show', worker
+        %td= link_to 'Edit', edit_worker_path(worker)
+        %td= link_to 'Destroy', worker, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Worker', new_worker_path
